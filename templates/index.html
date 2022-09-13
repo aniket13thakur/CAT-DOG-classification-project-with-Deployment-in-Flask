@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Image Classification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+      .jumbotron {
+      
+      padding-right: -40%;
+      padding-top: -40%;
+      padding-bottom: -40%;
+    }
+
+  .half {
+  height: 200px;
+  width: 50%;
+  left: 30px;
+  position: relative;
+}
+  </style>
+</head>
+<body style="background-image: url('static/bg.jpg');">
+ 
+<form class="form-horizontal" action="/about">
+  <button>About Me</button> 
+  </form>
+<div class="half">
+  <h1 class="jumbotron">CAT - DOG  Classfication</h1>
+
+  <br><br>
+  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+      <div class="col-sm-10">          
+        <input type="file" placeholder="Hours Studied"  name="my_image" id="pwd">
+      </div>
+    </div>
+                <!--<div class="uploadOR">
+                            <span>OR</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="pwd">Upload link address :</label>
+                <div class="upload-link">
+                            
+                    <input class="link-form-input" type="text" ,maxlength="1000" , name = "link" placeholder="Paste the CAT or DOG image URL(not the site address)"/>
+                                    
+                </div>
+                </div>
+                -->
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+    </form>
+<br><br><br><br><br><br><br><br><br><br><br>
+  
+  
+
+	{% if prediction %}
+  <img src="{{img_path}}" height="400px" width="400px">
+	<h2> Your Prediction   : <i> {{prediction}} </i></h2>
+
+	{% endif %}
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
